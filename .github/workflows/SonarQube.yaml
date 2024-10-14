@@ -58,6 +58,9 @@ jobs:
           /d:sonar.token="${{ secrets.SONAR_TOKEN }}" \
           /d:sonar.host.url="https://sonarcloud.io" \
           /d:sonar.cs.vscoveragexml.reportsPaths=./HelloWorldApp.Tests/coverage.xml
+
           cd "$base/HelloWorldApp" && dotnet build
           cd "$base/HelloWorldApp.Tests" && dotnet-coverage collect 'dotnet test' -f xml  -o 'coverage.xml'
+          cd "$base"
+          
           ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
