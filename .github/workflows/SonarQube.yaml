@@ -48,8 +48,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: bash
-        working-directory: ./HelloWorldApp
         run: |
-          ./.sonar/scanner/dotnet-sonarscanner begin /k:"morfien101_dotnet-hw" /o:"morfien101" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build
+          base=$(pwd)
+          ./.sonar/scanner/dotnet-sonarscanner begin \
+          /k:"morfien101_dotnet-hw" \
+          /o:"morfien101" \
+          /d:sonar.token="${{ secrets.SONAR_TOKEN }}" \
+          /d:sonar.host.url="https://sonarcloud.io" \
+          /d:sonar.cs.vscoveragexml.reportsPaths=./HelloWorldApp.Tests/coverage.xml
+          cd "$base/HelloWorldApp" && dotnet build
+          cd "$base/HelloWorldApp.Tests" && dotnet-coverage collect 'dotnet test' -f xml  -o 'coverage.xml'
           ./.sonar/scanner/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
