@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldApp", "HelloWorldApp\HelloWorldApp.csproj", "{F8031B6B-E080-43A8-B6BD-FA9BAA7EC179}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldApp.Tests", "HelloWorldApp.Tests\HelloWorldApp.Tests.csproj", "{C0ECBC8B-3796-4E55-88D1-D43A39F80114}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8031B6B-E080-43A8-B6BD-FA9BAA7EC179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8031B6B-E080-43A8-B6BD-FA9BAA7EC179}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8031B6B-E080-43A8-B6BD-FA9BAA7EC179}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8031B6B-E080-43A8-B6BD-FA9BAA7EC179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0ECBC8B-3796-4E55-88D1-D43A39F80114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0ECBC8B-3796-4E55-88D1-D43A39F80114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0ECBC8B-3796-4E55-88D1-D43A39F80114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0ECBC8B-3796-4E55-88D1-D43A39F80114}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
