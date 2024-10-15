@@ -14,4 +14,16 @@ public class ProgramTest
     // Assert
     Assert.Equal(expectedGreeting, actualGreeting);
   }
+  [Fact]
+  public void GreetUser_ReturnsCorrectGreetingInLanguage()
+  {
+    // Arrange
+    string name = "John";
+    string language = "Spanish";
+    string expectedGreeting = "Hello client user, John in Spanish\n";
+    // Act
+    string actualGreeting = HelloWorldApp.Greeter.GreetUser(name, language);
+    // Assert
+    Assert.Equal(expectedGreeting, actualGreeting);
+  }
 }
